@@ -42,6 +42,8 @@ const NavInner = styled('div')`
   }
 `;
 
+/*
+// Status component commented out to disable cloud status
 const Status = observer(({ project }) => {
   const Icon = !project.cloudEnabled
     ? MdcCloudAlert
@@ -76,6 +78,7 @@ const Status = observer(({ project }) => {
     </Popover>
   );
 });
+*/
 
 export default observer(({ store }) => {
   const project = useProject();
@@ -84,7 +87,20 @@ export default observer(({ store }) => {
     <NavbarContainer className="bp5-navbar">
       <NavInner>
         <Navbar.Group align={Alignment.LEFT}>
+          {/* ✅ Logo placed next to File menu */}
+          <div style={{ paddingRight: '15px' }}>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              style={{
+                height: '32px',
+                objectFit: 'contain',
+              }}
+            />
+          </div>
+
           <FileMenu store={store} project={project} />
+
           <div
             style={{
               paddingLeft: '20px',
@@ -101,9 +117,12 @@ export default observer(({ store }) => {
             />
           </div>
         </Navbar.Group>
-        <Navbar.Group align={Alignment.RIGHT}>
-          <Status project={project} />
 
+        <Navbar.Group align={Alignment.RIGHT}>
+          {/* Status component commented out to remove cloud status */}
+          {/* <Status project={project} /> */}
+
+          {/* 
           <AnchorButton
             href="https://polotno.com"
             target="_blank"
@@ -131,6 +150,8 @@ export default observer(({ store }) => {
               <FaTwitter className="bp5-icon" style={{ fontSize: '20px' }} />
             }
           ></AnchorButton>
+          */}
+
           <NavbarDivider />
           <PostProcessButton store={store} />
           <DownloadButton store={store} />

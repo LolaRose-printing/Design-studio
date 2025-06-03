@@ -227,17 +227,10 @@ export const FileMenu = observer(({ store, project }) => {
           <h2>Is it Open Source?</h2>
           <p>
             Partially. The source code is available in{' '}
-            <a href="https://github.com/lavrton/polotno-studio" target="_blank">
-              GitHub repository
-            </a>
-            . The repository doesn't have full source.{' '}
-            <strong>Polotno Studio</strong> is powered by{' '}
-            <a href="https://polotno.com/" target="_blank">
-              Polotno SDK project
-            </a>
+           
             . All core "canvas editor" functionality are implemented by{' '}
             <strong>polotno</strong> npm package (which is not open source at
-            the time of writing this text).
+            the time of writing this text).powered by
           </p>
           <p>
             Polotno Studio is build on top of Polotno SDK to provide a
